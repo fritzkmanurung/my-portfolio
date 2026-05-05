@@ -203,19 +203,20 @@ export function ProjectsSection({ projects, categories, githubUsername }: Projec
                   <motion.div
                     ref={idx === 0 ? firstCardRef : undefined}
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                     key={project.id}
-                  className="bg-[#1c1c1f]/80 backdrop-blur-md rounded-xl p-5 shadow-sm hover:shadow-2xl hover:bg-[#232326]/90 transition-all border border-white/10 flex flex-col group"
+                  className="bg-[#1c1c1f]/80 backdrop-blur-md rounded-xl p-5 shadow-sm hover:shadow-xl hover:border-white/20 hover:bg-[#232326]/90 transition-colors duration-300 border border-white/10 flex flex-col group"
                 >
                   <div className="relative aspect-[4/3] rounded-lg overflow-hidden mb-4 bg-zinc-900 border border-white/5">
                     {project.image_url ? (
                       <img 
                         src={project.image_url} 
                         alt={project.title} 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" 
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-zinc-600 text-[10px] font-bold uppercase tracking-widest">No Preview</div>

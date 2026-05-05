@@ -64,14 +64,15 @@ export function CertificatesSection({ certificates }: CertificatesSectionProps) 
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 key={cert.id}
-                className="bg-[#1c1c1f]/80 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-sm hover:shadow-2xl hover:bg-[#232326]/90 transition-all group overflow-hidden flex flex-col"
+                className="bg-[#1c1c1f]/80 backdrop-blur-md border border-white/10 rounded-xl p-4 shadow-sm hover:shadow-xl hover:border-white/20 hover:bg-[#232326]/90 transition-colors duration-300 group overflow-hidden flex flex-col"
               >
                 <div className="w-full aspect-[4/3] bg-white/5 rounded-lg mb-3 overflow-hidden border border-white/5 relative">
                   {cert.image_url ? (
                     <img 
                       src={cert.image_url} 
                       alt={cert.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-zinc-600 text-xs font-bold">No Image</div>
